@@ -23,7 +23,7 @@ INSTALLED_APPS = [
 
     'rest_framework_simplejwt',
     'rest_framework',
-    # # 'django.contrib.staticfiles',  # требуется для обслуживания файлов css/js интерфейса swagger
+    # 'django.contrib.staticfiles',  # требуется для обслуживания файлов css/js интерфейса swagger
     'drf_yasg',
     'corsheaders',
     'django_celery_beat',
@@ -154,5 +154,5 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 # }
 
 # Переменные
-TELEGRAM_URL = "https://api.telegram.org/bot"
+TELEGRAM_URL = "https://core.telegram.org/bots/api"
 BOT_TOKEN = os.getenv('BOT_TOKEN')
