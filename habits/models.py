@@ -8,8 +8,7 @@ class Award(models.Model):
     """ Модель вознаграждения """
 
     name = models.CharField(max_length=100, help_text='Название')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True,
-                              verbose_name='Владелец')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Владелец')
     description = models.TextField(max_length=200, blank=True, null=True, help_text='Описание')
     price = models.IntegerField(blank=True, null=True, verbose_name='Цена')
 
@@ -30,4 +29,3 @@ class Habits(models.Model):
     award = models.ForeignKey(Award, on_delete=models.SET_NULL, blank=True, null=True, help_text='Вознаграждение')
     time_to_complete = models.DurationField(default=datetime.time(minute=1, hour=0), help_text='Время на выполнение')
     is_public = models.BooleanField(default=False, help_text='Признак публичности')
-
