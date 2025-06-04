@@ -55,6 +55,8 @@ services:
       - web
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
+    env_file:
+      - .env
 
   nginx:
     image: vladlrnv/online-training-nginx:latest
