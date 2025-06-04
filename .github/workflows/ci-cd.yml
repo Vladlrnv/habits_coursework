@@ -59,9 +59,9 @@ jobs:
 
       - name: Create .env file
         run: |
-          chmod 644 .env
           touch .env
           echo '"${{ secrets.ENV_FILE }}"' | sed "s/\"//g" > .env
+          chmod 644 .env
 
       - name: copy file
         uses: appleboy/scp-action@v1
