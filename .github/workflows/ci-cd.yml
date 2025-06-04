@@ -62,6 +62,7 @@ jobs:
           touch .env
           echo '"${{ secrets.ENV_FILE }}"' | sed "s/\"//g" > .env
           chmod 644 .env
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} "chmod 644 ${DEPLOY_DIR}/docker-compose.yml ${DEPLOY_DIR}/.env"
 
       - name: copy file
         uses: appleboy/scp-action@v1
