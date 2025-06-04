@@ -1,6 +1,6 @@
 services:
   web:
-    image: vladlrnv/online-training:latest
+    image: vladlrnv/habbits:latest
     command: sh -c "python manage.py collectstatic --no-input && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
     environment:
       - DEBUG=True
@@ -59,7 +59,7 @@ services:
       - .env
 
   nginx:
-    image: vladlrnv/online-training-nginx:latest
+    image: vladlrnv/habbits-nginx:latest
     ports:
       - "80:80"
     volumes:

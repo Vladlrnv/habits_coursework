@@ -89,14 +89,14 @@ jobs:
       - name: Build Docker images
         run: |
           docker build --no-cache -t ${{ secrets.DOCKER_HUB_USERNAME }}/habbits:latest .
-          docker build --no-cache -t ${{ secrets.DOCKER_HUB_USERNAME }}/online-training-nginx:latest nginx/.
+          docker build --no-cache -t ${{ secrets.DOCKER_HUB_USERNAME }}/habbits-nginx:latest nginx/.
           docker build --no-cache -t ${{ secrets.DOCKER_HUB_USERNAME }}/celeri-worker:latest .
           docker build --no-cache -t ${{ secrets.DOCKER_HUB_USERNAME }}/celeri-beat:latest .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/online-training:latest
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/online-training-nginx:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/habbits:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/habbits-nginx:latest
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/celeri-worker:latest
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/celeri-beat:latest
 
