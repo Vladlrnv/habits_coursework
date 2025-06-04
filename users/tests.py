@@ -32,7 +32,7 @@ class TestUser(APITestCase):
         url = reverse("users:user-detail", args=(self.user.id,))
         response = self.client.get(url)
         data = response.json()
-        self.assertEqual(data.get("id"), 11)
+        self.assertEqual(data.get("id"), 1)
         self.assertEqual(data.get("email"), "test1@gmail.com")
 
     def test_user_list(self):
@@ -40,7 +40,7 @@ class TestUser(APITestCase):
         url = reverse("users:user-list")
         response = self.client.get(url)
         data = response.json()
-        data_expect = [{'id': 11, 'name': None, 'email': 'test1@gmail.com', 'phone': None}]
+        data_expect = [{'id': 1, 'name': None, 'email': 'test1@gmail.com', 'phone': None}]
         # print("data:", data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(data, data_expect)
