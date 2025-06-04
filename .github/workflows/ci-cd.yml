@@ -46,9 +46,9 @@ jobs:
         run: echo "TESTING=1" >> $GITHUB_ENV
 
       - name: Run tests
+        run: python manage.py test
         env:
-          STRIPE_API_KEY: ${{ secrets.STRIPE_API_KEY }}
-        run: python manage.py test --noinput
+          SECRET_KEY: test_secret_key
 
   copy_files_in_server:
     needs: test
