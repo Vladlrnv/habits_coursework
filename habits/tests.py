@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
 
-from habits.models import Award, Habits
+from habits.models import Award
 from users.models import User
 
 
