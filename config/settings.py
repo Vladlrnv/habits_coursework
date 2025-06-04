@@ -144,10 +144,10 @@ CSRF_TRUSTED_ORIGINS = [
 # Настройки для Celery
 # URL-адрес брокера сообщений
 # Например, Redis, который по умолчанию работает на порту 6379
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 
 # URL-адрес брокера результатов, также Redis
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = TIME_ZONE
